@@ -6,23 +6,14 @@ import java.util.Scanner;
 // Classe Passageiro
 public class Passageiro extends Usuario {
     protected String nome, email, endereco, telefone, senha;
-    
-    
-    
-    
-    
     public Passageiro(){
         super ("", "", "", "", "");
     }
     
-    
-    // Constutor com parâmetros:
     public Passageiro( String nome, String email, String endereco, String telefone, String senha ) {
         super(nome, email, endereco, telefone, senha);
     }    
 
-    
-    
     // Método para validar as informações inseridas pelo usuário passageiro:
     public void solicitarDadosPassageiro() {
         Scanner entrada = new Scanner(System.in);
@@ -98,19 +89,4 @@ public class Passageiro extends Usuario {
             }
         }
     }
-      
-    // Método para mostrar os dados para o usuário passageiro:
-//    public void mostrarDadosPassageiro() {;
-//        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-//        System.out.println("Cadastro Efetuado com Sucesso\n");
-//        System.out.println("Nome: " + getNome());
-//        System.out.println("Email: " + getEmail());
-//        System.out.println("Telefone: " + getTelefone());
-//        System.out.println("Endereço: " + getEndereco());
-//        System.out.println("Senha: " + getSenha());
-//        System.out.println("Apos efetuar o cadastro, selecione a opcao 2 para logar no sistema ShareTrack");
-//        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-//    }
- 
-  
 }
