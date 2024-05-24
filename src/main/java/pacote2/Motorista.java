@@ -3,20 +3,12 @@ package pacote2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Classe Motorista
+
 public class Motorista extends Usuario {
     private String numcnh, fabricante, modelo, cor, placa;
-   
-    
-   
-    
-    
-    
-    
     public Motorista(){
         super ("", "", "", "", "");
     }
-    
     
     // Constutor com parâmetros:
     public Motorista( String numcnh, String fabricante, String modelo, String cor, String placa, String nome, String email, String endereco, String telefone, String senha) {
@@ -26,7 +18,6 @@ public class Motorista extends Usuario {
         this.modelo = modelo;
         this.cor = cor;
         this.placa = placa;
-        
     }
 
     // Métodos Setters para obter os valores inseridos pelo usuário motorista:
@@ -35,23 +26,18 @@ public class Motorista extends Usuario {
         setNome(nome);  
     }
     public void setEmailMotorista(String email){
-        // Método herdado da class Passageiro:
         setEmail(email); 
     }
     public void setTelefoneMotorista(String telefone){
-        // Método herdado da class Passageiro:
         setTelefone(telefone);
     }
     public void setEnderecoMotorista(String endereco){
-        // Método herdado da class Passageiro:
         setEndereco(endereco);
     }
     public void setSenhaMotorista(String senha){
-        // Método herdado da class Passageiro:
         setSenha(senha);
     }
     
-    // Métodos Setters da própria class Motorista:
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
@@ -68,11 +54,6 @@ public class Motorista extends Usuario {
         this.numcnh = numcnh;
     }
     
-    
-    
-    
-    
-    // Métodos Getters para mostrar os valores inseridos pelo usuário motorista:
     public String getNome(){
         return nome;
     }
@@ -246,25 +227,5 @@ public class Motorista extends Usuario {
         }
         camposPreenchidos = false;
     }
-
-    // Método para mostrar os dados para o usuário motorista:
-//    public void mostrarDadosMotorista() {
-//        System.out.print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=-");
-//        System.out.print("\nCadastro Efetuado com Sucesso\n");
-//        System.out.print("\nNome: "+getNome());
-//        System.out.print("\nEmail: "+getEmail());
-//        System.out.print("\nTelefone: "+getTelefone());
-//        System.out.print("\nEndereço: "+getEndereco());
-//        System.out.print("\nSenha: "+getSenha());
-//        System.out.print("\nFabricante: "+getFabricante());
-//        System.out.print("\nModelo: "+getModelo());
-//        System.out.print("\nCor: " +getCor());
-//        System.out.print("\nPlaca: "+getPlaca());
-//        System.out.print("\nNuméro da CNH: "+getNumCnh());
-//        System.out.print("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=-");
-//       }
-
-    
-   
 }
  
