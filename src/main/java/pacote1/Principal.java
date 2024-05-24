@@ -318,24 +318,6 @@ public class Principal {
     }   
     entrada.nextLine();
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 //Função opção 5:
     static void avaliaViagem(){
