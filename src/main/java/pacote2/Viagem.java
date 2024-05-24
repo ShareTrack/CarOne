@@ -2,7 +2,6 @@ package pacote2;
 
 import java.util.Scanner;
 
-// Classe Viagem
 public class Viagem {
     protected String partida, destino;
     protected double partidaX, destinoX;
@@ -11,16 +10,12 @@ public class Viagem {
     protected Usuario motorista;
     protected Usuario passageiro;
     protected boolean viagemCompleta;
-     protected int avaliacao;
+    protected int avaliacao;
 
-    
-    
-    // Construtor vazio:
     public Viagem() {
         viagemCompleta = false;
     }
     
-    // Métodos Setters para obter os valores inseridos pelo usuário:
     public void setPartida(String partida) {
         this.partida = partida;
     }
@@ -29,31 +24,20 @@ public class Viagem {
     }
     public void setLugares(int qtdelugares) {
         this.qtdelugares = qtdelugares;
-     
     }
-    
     public void setMotorista(Usuario m) {
         this.motorista = m;
-     
     }
-    
     public void setPassgeiro(Usuario m) {
         this.passageiro = m;
-     
     }
     public void setViagemCompleta(boolean m) {
         this.viagemCompleta = m;
-     
     }
-    
      public void setAvaliacao(int m) {
         this.avaliacao = m;
-     
     }
-    
-    
-    
-    
+
     // Métodos Getters para mostrar os valores inseridos pelo usuário:
     public String getPartida() {
         return partida;
@@ -76,51 +60,25 @@ public class Viagem {
     public double getDestinoY() {
       return destinoY;
     }
-    
      public Usuario getMotorista() {
       return motorista;
     }
-     
      public Usuario getPassageiro() {
       return passageiro;
     }
     
-    
     //Função Euclidiana
     public double getDistancia(){
-        
-       
-        
-        
-        
         return Math.sqrt(((destinoX - partidaX)*(destinoX - partidaX)) + ((destinoY - partidaY)*(destinoY - partidaY)));
-        
-        
     }
     
-    // Função pegar ponto central;
+    // Função pra pegar ponto central;
     public double[] pontoCentral(){
-        
         double[] conjuntoCentral = new double[2];
         conjuntoCentral[0] = (partidaX + destinoX)/2;
         conjuntoCentral[1] = (partidaY + destinoY)/2;
         return conjuntoCentral;
-    
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     // Método para validar as informações inseridas pelo usuário ao cadastrar uma viagem:
     public void CadastroViagem() {
@@ -138,7 +96,6 @@ public class Viagem {
                 System.out.println("[ERROR] Campo Obrigatório! Digite Novamente.");
             } else {
                 this.partida = partida;
-                
                 validacao = true;
             }
         }
@@ -186,13 +143,9 @@ public class Viagem {
                   validacao = true;
               } catch (NumberFormatException e) {
                   System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");
-                  
+                  }
               }
-              
-              }
-            
     validacao = false;
-
 
         //Validação e atribuição da longitude.
         while (validacao == false) {
@@ -201,10 +154,8 @@ public class Viagem {
                   this.partidaY= Integer.parseInt(entrada.nextLine());
                   validacao = true;
               } catch (NumberFormatException e) {
-                  System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");
-                  
-              }
-
+                  System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");  
+               }
        }
         validacao = false;
          //Validação e atribuição da longitude.
@@ -214,10 +165,8 @@ public class Viagem {
                   this.destinoX = Integer.parseInt(entrada.nextLine());
                   validacao = true;
               } catch (NumberFormatException e) {
-                  System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");
-                 
+                  System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");    
               }
-
        }
         validacao = false;
          //Validação e atribuição da longitude.
@@ -230,8 +179,6 @@ public class Viagem {
                   System.out.println("[ERROR] Entrada inválida! Digite um número inteiro.");
                   validacao = false;
               }
-
-       }
-
-       }
+          }
+     }
 }
