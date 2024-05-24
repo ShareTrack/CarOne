@@ -1,22 +1,14 @@
-
 package pacote2;
 
 import java.util.ArrayList;
 
-// Classe Usuario
 public class Usuario {
     protected String nome, email, endereco, telefone, senha;
     protected int x, y;
-    
     private ArrayList<Viagem> ArrayViagensPendentes = new ArrayList<>();
     private ArrayList<Viagem> ArrayViagensConfirmadas = new ArrayList<>();
-     
-     
-    
     private ArrayList<Viagem> ArrayViagensRecusadas = new ArrayList<>();
-    
-    
-    // Constutor com parâmetros:
+
     public Usuario( String nome, String email, String endereco, String telefone, String senha ) {
         this.nome = nome;
         this.email = email;
@@ -25,8 +17,6 @@ public class Usuario {
         this.senha = senha;
     }    
 
-        
-    
    // Métodos Setters para obter os valores inseridos pelo usuário passageiro:
     public void setNome(String nome) {
         this.nome = nome;
@@ -49,10 +39,6 @@ public class Usuario {
     public void setY(int y) {
         this.y = y;
     }
-    
-    
-    
-    
     // Métodos Getters para mostrar os valores inseridos pelo usuário passageiro:
     public String getNome() {
         return nome;
@@ -69,24 +55,19 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
-    
     public int getX() {
         return x;
     }
     public int getY() {
         return y;
     }
-    
     public ArrayList<Viagem> getArrayViagensPendentes(){
         return ArrayViagensPendentes;
     }
-    
     public ArrayList<Viagem> getArrayViagensConfirmadas(){
         return ArrayViagensConfirmadas;
     }
     public ArrayList<Viagem> getArrayViagensRecusadas(){
         return ArrayViagensRecusadas;
-    }
-    
-    
+    } 
 }
