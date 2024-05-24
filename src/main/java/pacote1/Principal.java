@@ -8,17 +8,14 @@ import pacote2.Passageiro;
 import pacote2.Usuario;
 import pacote2.Viagem;
 
-// Classe Principal
 public class Principal {
     
-    // Declrando métodos universal para todo código:
     private static Scanner entrada = new Scanner(System.in);
     private static boolean cadastroEfetuado = false;
     private static boolean loginEfetuado = false;
     private static Usuario usuarioAtivo;
     private static boolean finalizar = false;
     
-    // Declarando arraylist: 
     private static ArrayList<Passageiro> ArrayPassageiros = new ArrayList<>();
     private static ArrayList<Motorista> ArrayMotoristas = new ArrayList<>();
     private static ArrayList<Viagem> ArrayViagens = new ArrayList<>();
@@ -27,9 +24,7 @@ public class Principal {
      
     private static boolean Vaceita = false;
     
-    
-    // Declarando funções do menu:
-    // Função do menu principal:
+
     static void menuPrincipal() {
         System.out.print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("\nSeja Bem-Vindo(a) ao ShareTrack");
@@ -52,27 +47,22 @@ public class Principal {
                         int aceita = entrada.nextInt();
                         entrada.nextLine();
                         
-                        
                         if(aceita == 1){
                             u.getPassageiro().getArrayViagensConfirmadas().add(u);
                             Vaceita = true;
                         } else if(aceita == 0){
-                             u.getPassageiro().getArrayViagensRecusadas().add(u);
+                            u.getPassageiro().getArrayViagensRecusadas().add(u);
                             Vaceita = false;
-                        }
-                    
-                            
-                            
-                        
-                    }
+                            }    
+                     }
+
                 if (Vaceita == true){
                     usuarioAtivo.getArrayViagensPendentes().remove(0);
                 } else{
                     usuarioAtivo.getArrayViagensPendentes().remove(0);
-                }
-               
-                    
-                }else if (usuarioAtivo.getArrayViagensConfirmadas().isEmpty() == false){
+                    }
+                  
+                } else if (usuarioAtivo.getArrayViagensConfirmadas().isEmpty() == false){
                     System.out.println("Sua Viagem foi confirmada");
                     
                     
@@ -85,7 +75,6 @@ public class Principal {
                 System.out.println("[4] - Buscar Carona");
                 System.out.println("[5] - Avaliar Viagem");
             } else {
-//              System.out.println("[2] - Login (Bloqueado)");
                 System.out.println("[3] - Cadastrar Viagem (Bloqueado)");
                 System.out.println("[4] - Buscar Carona (Bloqueado)");
                 System.out.println("[5] - Avaliar Viagem (Bloqueado)");
@@ -96,6 +85,7 @@ public class Principal {
             System.out.println("[4] - Buscar Carona (Bloqueado)");
             System.out.println("[5] - Avaliar Viagem (Bloqueado)");
         }
+        
         System.out.println("[6] - Sair do Programa");
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
@@ -135,7 +125,6 @@ public class Principal {
         System.out.print("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.print("\nInforme a opção: ");
         
-        // Validação onde o número inseiro será um inteiro:
         while (true) {
             try {
                 int tipoConta = Integer.parseInt(entrada.nextLine());
@@ -275,35 +264,18 @@ public class Principal {
     }
     
     //Função da opção 3:
-   
-    static void CadastroViagem() {
+       static void CadastroViagem() {
         if (usuarioAtivo instanceof Motorista){
             Viagem novaViagem1 = new Viagem(); 
             novaViagem1.CadastroViagem(); 
             novaViagem1.setMotorista(usuarioAtivo);
             ArrayViagens.add(novaViagem1); 
         }
-        
-        
-//        for (Viagem viagem : ArrayViagens) {
-//            System.out.println("Partida: " + viagem.getPartida());
-//            System.out.println("Destino: " + viagem.getDestino());
-//            System.out.println("Quantidade de lugares: " + viagem.getQtdeLugares());
-//            System.out.println("----------------------------------");
-//        }
     } 
-    
     
     //Função Euclidiana
     public static double getDistancia(double destinoX, double destinoY, double partidaX, double partidaY){
-        
-       
-        
-        
-        
         return Math.sqrt(((destinoX - partidaX)*(destinoX - partidaX)) + ((destinoY - partidaY)*(destinoY - partidaY)));
-        
-        
     }
     
     
@@ -324,14 +296,6 @@ public class Principal {
         System.out.print("Quantos passageiros vão entrar? ");
         int passageiros = entrada.nextInt();
         
-        
-//    //if (isMotorista){
-//        System.out.print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
-//        System.out.print("Você é um motorista, portanto não pode buscar viagens.\n");
-//        System.out.print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=---=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
-
-//        return;
-//    }
     for (Viagem viagem : ArrayViagens) {
         // tenho quase certeza que isso aqui ta errado
         if (getDistancia(viagem.getDestinoX(),viagem.getDestinoY(), usuarioX, usuarioY) <= 2 && getDistancia(viagem.getPartidaX(),viagem.getPartidaY(), usuarioX, usuarioY) <= 2 && passageiros <= viagem.getQtdeLugares())  {
