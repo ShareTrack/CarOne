@@ -6,8 +6,8 @@
   <br/>
 <h3> Desenvolvedoras </h3>
 <ul>
-  <li>Beatriz Pimenta de Camargo - RA: 10428378</li>
-  <li>Isabella Sofia Martins - RA: 10420398</li>
-  <li>Letícia Santiago da Silva - RA: 10420655 </li>
+  <li>Beatriz Pimenta de Camargo </li>
+  <li>Isabella Sofia Martins </li>
+  <li>Letícia Santiago da Silva </li>
 </ul>
 
